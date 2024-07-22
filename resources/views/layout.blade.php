@@ -94,6 +94,215 @@
             border-radius: .3em;
             white-space: normal;
         }
+
+        .markdown-body {
+            color: #e5e7eb;
+            line-height: 1.625;
+        }
+
+        /* Headings */
+        .markdown-body h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            margin-top: 3rem;
+            color: #ffffff;
+        }
+
+        .markdown-body h2 {
+            font-size: 1.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            color: #ffffff;
+        }
+
+        .markdown-body h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            margin-top: 1.5rem;
+            color: #ffffff;
+        }
+
+        .markdown-body h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+            color: #ffffff;
+        }
+
+        .markdown-body h5 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+            color: #ffffff;
+        }
+
+        .markdown-body h6 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+            color: #ffffff;
+        }
+
+        /* Emphasis */
+        .markdown-body em {
+            font-style: italic;
+        }
+
+        .markdown-body strong {
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        /* Blockquotes */
+        .markdown-body blockquote {
+            border-left: 4px solid #6b7280;
+            padding-left: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+            color: #d1d5db;
+        }
+
+        /* Lists */
+        .markdown-body ul, .markdown-body ol {
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .markdown-body ul {
+            list-style-type: disc;
+        }
+
+        .markdown-body ol {
+            list-style-type: decimal;
+        }
+
+        .markdown-body li > ul, .markdown-body li > ol {
+            margin-bottom: 0;
+            margin-top: 0.5rem;
+        }
+
+        /* Links */
+        .markdown-body a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        .markdown-body a:hover {
+            text-decoration: underline;
+        }
+
+        /* Images */
+        .markdown-body img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+            border-radius: 0.25rem;
+        }
+
+        /* Inline Code */
+        .markdown-body :not(pre) > code {
+            background-color: #050B19;
+            color: #e5e7eb;
+            border-radius: 0.25rem;
+            padding: 0.125rem 0.25rem;
+            font-size: 0.875rem;
+        }
+
+        /* Tables */
+        .markdown-body table {
+            width: 100%;
+            margin-bottom: 1rem;
+            border-collapse: collapse;
+        }
+
+        .markdown-body th, .markdown-body td {
+            border: 1px solid #4b5563;
+            padding: 0.5rem 1rem;
+            text-align: left;
+        }
+
+        .markdown-body th {
+            background-color: #374151;
+            font-weight: 600;
+        }
+
+        /* Horizontal Rule */
+        .markdown-body hr {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border: 0;
+            border-top: 1px solid #4b5563;
+        }
+
+        /* Task Lists */
+        .markdown-body input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+
+        /* Strikethrough */
+        .markdown-body del {
+            text-decoration: line-through;
+            color: #9ca3af;
+        }
+
+        /* Footnotes */
+        .markdown-body .footnote {
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+
+        .markdown-body .footnotes {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #4b5563;
+        }
+
+        /* HTML in Markdown */
+        .markdown-body .custom-block {
+            padding: 1rem;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .markdown-body .custom-block.info {
+            background-color: #1e3a8a;
+            color: #bfdbfe;
+        }
+
+        .markdown-body .custom-block.warning {
+            background-color: #854d0e;
+            color: #fef08a;
+        }
+
+        .markdown-body .custom-block.danger {
+            background-color: #7f1d1d;
+            color: #fecaca;
+        }
+
+        /* General text and spacing */
+        .markdown-body p {
+            margin-bottom: 1rem;
+        }
+
+        .markdown-body * + h1,
+        .markdown-body * + h2,
+        .markdown-body * + h3 {
+            margin-top: 3rem;
+        }
+
+        .markdown-body * + h4,
+        .markdown-body * + h5,
+        .markdown-body * + h6 {
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-dark-100 min-h-screen flex flex-col">
@@ -131,7 +340,7 @@
         <main class="flex-1 p-8 overflow-y-auto">
             <div class="max-w-3xl mx-auto">
                 <h1 class="text-3xl text-gray-100 font-bold mb-2">{{ $title }}</h1>
-                <div class="prose prose-invert max-w-none">
+                <div class="prose prose-invert max-w-none markdown-body">
                     {!! $content !!}
                 </div>
             </div>
